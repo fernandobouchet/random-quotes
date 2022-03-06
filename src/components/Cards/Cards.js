@@ -22,10 +22,7 @@ export default Cards;
 
 const QuoteContainer = styled.div`
   text-align: center;
-  border-radius: 5px;
-  background-color: white;
   font-size: 1rem;
-  padding: 1rem;
 `;
 
 const QuoteContent = styled.h1`

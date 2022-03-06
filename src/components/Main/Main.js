@@ -37,9 +37,7 @@ function Main() {
               author={quote.author}
               color={color}
             ></Cards>
-            <ButtonContainer>
-              <Button onClick={setNewQuote}>New Quote</Button>
-            </ButtonContainer>
+            <Button onClick={setNewQuote}>New Quote</Button>
           </CardContainer>
         )}
       </MainContainer>
@@ -60,6 +58,7 @@ const cardAnimation = keyframes`
 const CardContainer = styled.div`
   border-radius: 5px;
   background-color: white;
+  padding: 1rem;
   margin: 15%;
   display: flex;
   flex-direction: column;
@@ -67,11 +66,6 @@ const CardContainer = styled.div`
   align-items: center;
   animation-name: ${cardAnimation};
   animation-duration: 0.5s;
-`;
-
-const ButtonContainer = styled.div`
-  margin: 1rem;
-  padding-bottom: 1rem;
 `;
 
 const Button = styled.button`
