@@ -49,10 +49,15 @@ export default Main;
 
 const cardAnimation = keyframes`
  0% { opacity: 0}
+ 10% { opacity: 0.1 }
  20% { opacity: 0.2}
+ 30% { opacity: 0.3}
  40% { opacity: 0.4}
+ 50% { opacity: 0.5}
  60% { opacity: 0.6}
+ 70% { opacity: 0.7}
  80% { opacity: 0.8}
+ 90% { opacity: 0.9}
  100% { opacity: 1 }`;
 
 const CardContainer = styled.div`
@@ -65,8 +70,7 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   animation-name: ${cardAnimation};
-  animation-duration: 0.5s;
-
+  animation-duration: 1s;
   @media (max-width: 480px) {
     margin: 5%;
   }
@@ -76,6 +80,7 @@ const Button = styled.button`
   border-radius: 5px;
   width: 7rem;
   height: 2rem;
+  margin: 1rem;
   background-color: ${(props) => props.theme.color};
   font-family: inherit;
   font-size: 1.1rem;
@@ -91,7 +96,7 @@ const Button = styled.button`
 
 const MainContainer = styled.div`
   animation-name: ${cardAnimation};
-  animation-duration: 0.5s;
+  animation-duration: 0.9s;
   height: 100vh;
   width: 100%;
   background-color: ${(props) => props.theme.color};
