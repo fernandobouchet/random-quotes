@@ -1,12 +1,27 @@
+import styled from "styled-components";
+
 function Cards(props) {
   const { content, author } = props;
 
   return (
-    <>
-      <h1>{content}</h1>
-      <h2>{author}</h2>
-    </>
+    <QuoteContainer>
+      <QuoteContent>"{content}"</QuoteContent>
+      <QuoteAuthor> - {author}</QuoteAuthor>
+    </QuoteContainer>
   );
 }
 
 export default Cards;
+
+const QuoteContainer = styled.div`
+  width: 80%;
+  height: auto;
+  background-color: #0a9396;
+  color: white;
+  font-size: 0.8rem;
+  padding: 1rem;
+`;
+const QuoteContent = styled.h1``;
+const QuoteAuthor = styled.h2`
+  float: rigth;
+`;
