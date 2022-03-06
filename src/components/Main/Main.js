@@ -1,11 +1,12 @@
 import styled, { keyframes } from "styled-components";
 import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
+import randomColor from "../Utils/RandomColors";
+import { ThemeProvider } from "styled-components";
 
 function Main() {
   const [quote, setQuote] = useState([]);
-
-  console.log(quote);
+  const [color, setRandomColor] = useState(randomColor);
 
   useEffect(() => {
     QuotesApi();
@@ -23,19 +24,26 @@ function Main() {
 
   function setNewQuote() {
     setQuote(QuotesApi());
+    setRandomColor(randomColor);
   }
 
   return (
-    <MainContainer>
-      {quote.content && (
-        <CardContainer>
-          <Cards content={quote.content} author={quote.author}></Cards>
-          <ButtonContainer>
-            <Button onClick={setNewQuote}>New Quote</Button>
-          </ButtonContainer>
-        </CardContainer>
-      )}
-    </MainContainer>
+    <ThemeProvider theme={{ color }}>
+      <MainContainer>
+        {quote.content && (
+          <CardContainer>
+            <Cards
+              content={quote.content}
+              author={quote.author}
+              color={color}
+            ></Cards>
+            <ButtonContainer>
+              <Button onClick={setNewQuote}>New Quote</Button>
+            </ButtonContainer>
+          </CardContainer>
+        )}
+      </MainContainer>
+    </ThemeProvider>
   );
 }
 
@@ -50,7 +58,8 @@ const cardAnimation = keyframes`
  100% { opacity: 1 }`;
 
 const CardContainer = styled.div`
-  background-color: #0a9396;
+  border-radius: 5px;
+  background-color: white;
   margin: 15%;
   display: flex;
   flex-direction: column;
@@ -65,9 +74,10 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
+  border-radius: 5px;
   width: 7rem;
   height: 2rem;
-  background-color: #005f73;
+  background-color: ${(props) => props.theme.color};
   font-family: inherit;
   border: none;
   cursor: pointer;
@@ -77,9 +87,8 @@ const Button = styled.button`
 const MainContainer = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: #005f73;
+  background-color: ${(props) => props.theme.color};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 `;

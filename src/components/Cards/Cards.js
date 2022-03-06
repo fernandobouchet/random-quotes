@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 function Cards(props) {
-  const { content, author } = props;
+  const { content, author, color } = props;
 
   return (
     <QuoteContainer>
-      <QuoteContent>"{content}"</QuoteContent>
-      <QuoteAuthor> - {author}</QuoteAuthor>
+      <ThemeProvider theme={{ color }}>
+        <QuoteContent>"{content}"</QuoteContent>
+        <QuoteAuthor> - {author}</QuoteAuthor>
+      </ThemeProvider>
     </QuoteContainer>
   );
 }
@@ -14,14 +17,16 @@ function Cards(props) {
 export default Cards;
 
 const QuoteContainer = styled.div`
-  height: auto;
-  background-color: #0a9396;
-  color: white;
+  border-radius: 5px;
+  background-color: white;
   font-size: 0.8rem;
   padding: 1rem;
 `;
 
-const QuoteContent = styled.h1``;
+const QuoteContent = styled.h1`
+  color: ${(props) => props.theme.color};
+`;
 const QuoteAuthor = styled.h2`
+  color: ${(props) => props.theme.color};
   float: rigth;
 `;
