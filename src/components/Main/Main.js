@@ -71,6 +71,7 @@ const CardContainer = styled.div`
 
 const ButtonContainer = styled.div`
   margin: 1rem;
+  padding-bottom: 1rem;
 `;
 
 const Button = styled.button`
@@ -79,6 +80,8 @@ const Button = styled.button`
   height: 2rem;
   background-color: ${(props) => props.theme.color};
   font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   color: white;

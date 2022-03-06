@@ -30,10 +30,12 @@ const QuoteContainer = styled.div`
 
 const QuoteContent = styled.h1`
   color: ${(props) => props.theme.color};
+  font-weight: 700;
 `;
 
 const QuoteAuthor = styled.h2`
   color: ${(props) => props.theme.color};
+  font-weight: 400;
 `;
 
 const Quote = styled.span`
