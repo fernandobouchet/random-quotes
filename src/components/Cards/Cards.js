@@ -7,8 +7,12 @@ function Cards(props) {
   return (
     <QuoteContainer>
       <ThemeProvider theme={{ color }}>
-        <QuoteContent>"{content}"</QuoteContent>
-        <QuoteAuthor> - {author}</QuoteAuthor>
+        <QuoteContent>
+          <Quote>“ </Quote>
+          {content}
+          <Quote> ”</Quote>
+        </QuoteContent>
+        <QuoteAuthor> - {author} - </QuoteAuthor>
       </ThemeProvider>
     </QuoteContainer>
   );
@@ -17,16 +21,22 @@ function Cards(props) {
 export default Cards;
 
 const QuoteContainer = styled.div`
+  text-align: center;
   border-radius: 5px;
   background-color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 1rem;
 `;
 
 const QuoteContent = styled.h1`
   color: ${(props) => props.theme.color};
 `;
+
 const QuoteAuthor = styled.h2`
   color: ${(props) => props.theme.color};
-  float: rigth;
+`;
+
+const Quote = styled.span`
+  font-size: 2rem;
+  color: ${(props) => props.theme.color};
 `;

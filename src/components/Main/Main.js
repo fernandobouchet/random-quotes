@@ -85,6 +85,8 @@ const Button = styled.button`
 `;
 
 const MainContainer = styled.div`
+  animation-name: ${cardAnimation};
+  animation-duration: 0.5s;
   height: 100vh;
   width: 100%;
   background-color: ${(props) => props.theme.color};
