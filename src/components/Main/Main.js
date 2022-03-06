@@ -66,6 +66,10 @@ const CardContainer = styled.div`
   align-items: center;
   animation-name: ${cardAnimation};
   animation-duration: 0.5s;
+
+  @media (max-width: 480px) {
+    margin: 5%;
+  }
 `;
 
 const Button = styled.button`
@@ -79,6 +83,10 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   color: white;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const MainContainer = styled.div`

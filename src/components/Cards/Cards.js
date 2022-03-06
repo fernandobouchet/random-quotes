@@ -23,6 +23,9 @@ export default Cards;
 const QuoteContainer = styled.div`
   text-align: center;
   font-size: 1rem;
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const QuoteContent = styled.h1`
@@ -38,4 +41,8 @@ const QuoteAuthor = styled.h2`
 const Quote = styled.span`
   font-size: 2rem;
   color: ${(props) => props.theme.color};
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 `;
