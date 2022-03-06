@@ -14,13 +14,13 @@ function Cards(props) {
 export default Cards;
 
 const QuoteContainer = styled.div`
-  width: 80%;
   height: auto;
   background-color: #0a9396;
   color: white;
   font-size: 0.8rem;
   padding: 1rem;
 `;
+
 const QuoteContent = styled.h1``;
 const QuoteAuthor = styled.h2`
   float: rigth;

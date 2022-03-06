@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 
@@ -41,13 +41,23 @@ function Main() {
 
 export default Main;
 
+const cardAnimation = keyframes`
+ 0% { opacity: 0}
+ 20% { opacity: 0.2}
+ 40% { opacity: 0.4}
+ 60% { opacity: 0.6}
+ 80% { opacity: 0.8}
+ 100% { opacity: 1 }`;
+
 const CardContainer = styled.div`
   background-color: #0a9396;
-  margin: 5%;
+  margin: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation-name: ${cardAnimation};
+  animation-duration: 0.5s;
 `;
 
 const ButtonContainer = styled.div`
