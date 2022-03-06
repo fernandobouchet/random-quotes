@@ -27,12 +27,14 @@ function Main() {
 
   return (
     <MainContainer>
-      <CardContainer>
-        <Cards content={quote.content} author={quote.author}></Cards>
-        <ButtonContainer>
-          <Button onClick={setNewQuote}>New Quote</Button>
-        </ButtonContainer>
-      </CardContainer>
+      {quote.content && (
+        <CardContainer>
+          <Cards content={quote.content} author={quote.author}></Cards>
+          <ButtonContainer>
+            <Button onClick={setNewQuote}>New Quote</Button>
+          </ButtonContainer>
+        </CardContainer>
+      )}
     </MainContainer>
   );
 }
@@ -40,6 +42,8 @@ function Main() {
 export default Main;
 
 const CardContainer = styled.div`
+  background-color: #0a9396;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,9 +55,10 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  width: 5rem;
+  width: 7rem;
   height: 2rem;
-  background-color: #0a9396;
+  background-color: #005f73;
+  font-family: inherit;
   border: none;
   cursor: pointer;
   color: white;
