@@ -26,7 +26,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   font-size: 0.9rem;
   text-align: center;
-  position: sticky;
+  position: fixed;
   color: white;
 
   @media (max-width: 480px) {
