@@ -1,12 +1,12 @@
 import styled, { keyframes } from "styled-components";
 import { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
-import randomColor from "../Utils/RandomColors";
 import { ThemeProvider } from "styled-components";
 
-function Main() {
+function Main(props) {
+  const { color, changeColor } = props;
+
   const [quote, setQuote] = useState([]);
-  const [color, setRandomColor] = useState(randomColor);
 
   useEffect(() => {
     QuotesApi();
@@ -24,7 +24,7 @@ function Main() {
 
   function setNewQuote() {
     setQuote(QuotesApi());
-    setRandomColor(randomColor);
+    changeColor();
   }
 
   return (
@@ -97,7 +97,7 @@ const Button = styled.button`
 const MainContainer = styled.div`
   animation-name: ${cardAnimation};
   animation-duration: 0.9s;
-  height: 100vh;
+  height: calc(100vh - 1rem);
   width: 100%;
   background-color: ${(props) => props.theme.color};
   display: flex;
