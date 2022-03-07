@@ -1,14 +1,14 @@
 const colors = [
-  "#001219ff",
-  "#005f73ff",
-  "#0a9396ff",
-  "#94d2bdff",
-  "#e9d8a6ff",
-  "#ee9b00ff",
-  "#ca6702ff",
-  "#bb3e03ff",
-  "#ae2012ff",
-  "#9b2226ff",
+  "#f94144ff",
+  "#f3722cff",
+  "#f8961eff",
+  "#f9844aff",
+  "#f9c74fff",
+  "#90be6dff",
+  "#43aa8bff",
+  "#4d908eff",
+  "#577590ff",
+  "#277da1ff",
 ];
 
 function randomColor() {
