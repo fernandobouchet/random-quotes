@@ -14,7 +14,7 @@ function Main(props) {
 
   async function QuotesApi() {
     try {
-      const res = await fetch("https://api.quotable.io/random");
+      const res = await fetch("https://quoteslate.vercel.app/api/quotes/random");
       const data = await res.json();
       setQuote(data);
     } catch (error) {
